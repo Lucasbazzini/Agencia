@@ -1,0 +1,142 @@
+:root {
+    --color_principal: rgb(0, 114, 0);
+    --gris_principal: rgb(247, 247, 247);
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Phudu', cursive;
+    font-family: 'Prompt', sans-serif;
+}
+
+header {
+    top: 0;
+    position: sticky;
+    z-index: 100;
+}
+
+.barra {
+    background-color: var(--gris_principal);
+}
+
+.lista_nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista_nav li {
+    margin-bottom: 5px;
+}
+
+.lista_nav li a {
+    margin-right: 20px;
+    margin-top: 5px;
+    transition: all 1s;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.lista_nav li a:hover {
+    color: var(--color_principal);
+    font-size: 22px;
+    margin-right: 18px;
+    margin-top: 3px;
+}
+
+@media (min-width:992px) {
+    .div_ul {
+        position: absolute;
+        right: 10%;
+    }
+}
+
+/*FIN DE HEADER*/
+
+.carousel-item img {
+    filter: blur(1.4px);
+    height: 85vh;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.tittle {
+    font-size: 50px;
+    color: var(--gris_principal);
+    font-weight: bolder;
+}
+
+.text_tittle{
+    font-size: 30px;
+    color: var(--gris_principal);
+}
+
+
+
+
+
+
+
+@media (max-width:992px) {
+    .carousel-item img {
+        height: 65vh;
+        object-fit: cover;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .tittle {
+        font-size: 45px;
+        font-weight: bolder;
+    }
+    
+    .text_tittle{
+        font-size: 27px;
+    }
+    
+}
+
+@media (max-width:650px) {
+    .carousel-item img {
+        height: 55vh;
+        object-fit: cover;
+    }
+    .tittle {
+        font-size: 40px;
+        font-weight: bolder;
+    }
+    
+    .text_tittle{
+        font-size: 25px;
+    }
+}
+
+@media (max-width:450px) {
+    .carousel-item img {
+        height: 45vh;
+        object-fit: cover;
+    }
+    .tittle {
+        font-size: 35px;
+        font-weight: bolder;
+    }
+    
+    .text_tittle{
+        font-size: 22px;
+    }
+}
