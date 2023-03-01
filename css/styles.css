@@ -1,6 +1,8 @@
 :root {
-    --color_principal: rgb(0, 114, 0);
+    --color_principal: rgb(0, 168, 0);
+    --gris_oscuro:rgb(38, 38, 38);
     --gris_principal: rgb(247, 247, 247);
+
 }
 
 
@@ -33,19 +35,40 @@ header {
 }
 
 .lista_nav li a {
-    margin-right: 20px;
-    margin-top: 5px;
-    transition: all 1s;
-    font-weight: bolder;
-    font-size: 20px;
-}
-
-.lista_nav li a:hover {
-    color: var(--color_principal);
-    font-size: 22px;
-    margin-right: 18px;
-    margin-top: 3px;
-}
+    margin-right: 30px;
+    padding: 10px 25px;
+    border: unset;
+    border-radius: 10px;
+    color: #212121;
+    z-index: 1;
+    background: var(--gris_principal);
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    transition: all 0.5s;
+    overflow: hidden;
+   }
+   
+   .lista_nav li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    background-color: var(--gris_oscuro);
+    z-index: -1;
+    transition: all 0.5s;
+   }
+   
+   .lista_nav li a:hover {
+    color: var(--gris_principal);
+   }
+   
+   .lista_nav li a:hover::before {
+    width: 100%;
+   }
 
 @media (min-width:992px) {
     .div_ul {
@@ -56,9 +79,11 @@ header {
 
 /*FIN DE HEADER*/
 
+
+/*SECCION CARRUSEL*/
 .carousel-item img {
     filter: blur(1.4px);
-    height: 85vh;
+    height: 89vh;
     object-fit: cover;
 }
 
@@ -76,15 +101,99 @@ header {
     font-weight: bolder;
 }
 
-.text_tittle{
+.text_tittle{letter-spacing: 4px;
     font-size: 30px;
     color: var(--gris_principal);
 }
+/*FIN DE SECCION CARRUSEL*/
 
 
 
+/*SECCION H1 Y BARRA DE LOGOS*/
+
+.div_tittle{
+    background-color: var(--gris_oscuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--gris_principal);
+}
+
+h1{
+    margin: 30px 0px;
+    margin-top: 80px;
+    font-size: 50px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    text-align: center;
+    border-bottom: 2px solid rgb(0, 114, 0);
+}
+
+.p_tittle{
+    letter-spacing: 5px;
+    line-height: 40px;
+    text-align: center;
+    margin: 20px 10rem;
+    margin-bottom: 90px;
+}
+
+.space{
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+}
+
+.container_logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px;
+}
+
+.logo_barra{
+    height: 130px;
+    margin: 30px 0px;
+    transition: all 2s;
+}
+
+.logo_barra:hover{
+    transform: scale(1.1);
+}
 
 
+.span_logo_barra{
+    position: relative;
+    font-weight: 900;
+    height: 40px;
+    padding: 12px 20px;
+    outline: none;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 5px;
+  }
+  
+  .span_logo_barra:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 7px;
+    left: 7px;
+    height: 100%;
+    background-color: var(--color_principal);
+    z-index: -1;
+    transition: all 0.35s;
+    border-radius: inherit;
+  }
+  
+  .span_logo_barra:hover:after {
+    top: 0px;
+    left: 0px;
+  }
+  
+
+
+/*MEDIAQUERY*/
 
 
 @media (max-width:992px) {
@@ -124,6 +233,13 @@ header {
     .text_tittle{
         font-size: 25px;
     }
+    h1{
+        font-size: 40px;
+        letter-spacing: 1px;
+    }
+    .p_tittle{
+        margin: 30px 2rem;
+    }
 }
 
 @media (max-width:450px) {
@@ -138,5 +254,14 @@ header {
     
     .text_tittle{
         font-size: 22px;
+    }
+    h1{
+        margin-top: 50px;
+        font-size: 25px;
+        letter-spacing: 1px;
+    }
+    .p_tittle{
+        margin: 30px 1rem;
+        margin-bottom: 60px;
     }
 }
